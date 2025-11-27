@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: rv-agent
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DEEPSEEK_API_KEY
+        sync: false  # 需要在Render Dashboard中手动设置
+    healthCheckPath: /api/health
+
